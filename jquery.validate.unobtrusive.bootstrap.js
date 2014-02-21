@@ -1,5 +1,5 @@
 ﻿/*!
- * jQuery Validate Unobtrusive Bootstrap 1.0.0
+ * jQuery Validate Unobtrusive Bootstrap 1.1.0
  *
  * https://github.com/sandrocaseiro/jquery.validate.unobtrusive.bootstrap
  *
@@ -85,6 +85,16 @@
 			};
 
 			validator.settings.success = onSuccess;
+
+			$this.find('.input-validation-error').each(function()
+			{
+				var errorElement = $this.find("[data-valmsg-for='" + escapeAttributeValue($(this)[0].name) + "']");
+				var newElement = $(document.createElement(validator.settings.errorElement))
+					.addClass('text-danger')
+					.attr('for', escapeAttributeValue($(this)[0].name))
+					.text(errorElement.text());
+				onError($this, newElement, $(this));
+			});
 		});
 	};
 
