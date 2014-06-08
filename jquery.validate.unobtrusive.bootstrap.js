@@ -1,5 +1,5 @@
 ﻿/*!
- * jQuery Validate Unobtrusive Bootstrap 1.2.0
+ * jQuery Validate Unobtrusive Bootstrap 1.2.1
  *
  * https://github.com/sandrocaseiro/jquery.validate.unobtrusive.bootstrap
  *
@@ -26,13 +26,8 @@
 
 		if (replace)
 		{
-			var group = inputElement.parent();
-			if (group.hasClass('form-group'))
-			{
-				group.addClass('has-error').removeClass('has-success');
-			}
-			group = group.parent();
-			if (group.hasClass('form-group'))
+			var group = inputElement.closest('.form-group');
+			if (group && group.length > 0)
 			{
 				group.addClass('has-error').removeClass('has-success');
 			}
@@ -47,13 +42,8 @@
 
 		if (container)
 		{
-			var group = container.parent();
-			if (group.hasClass('form-group'))
-			{
-				group.addClass('has-success').removeClass('has-error');
-			}
-			group = group.parent();
-			if (group.hasClass('form-group'))
+			var group = container.closest('.form-group');
+			if (group && group.length > 0)
 			{
 				group.addClass('has-success').removeClass('has-error');
 			}
