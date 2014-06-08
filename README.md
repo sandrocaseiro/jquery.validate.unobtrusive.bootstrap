@@ -5,7 +5,7 @@ A jQuery Validate Unobtrusive extension for Bootstrap 3
 
 If you liked it, buy me a beer!
 
-https://pledgie.com/campaigns/25585
+<a href='https://pledgie.com/campaigns/25585'><img alt='Click here to lend your support to: jquery.validate.unobtrusive.bootstrap and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/25585.png?skin_name=chrome' border='0' ></a>
 
 ## Where can I get it?
 
