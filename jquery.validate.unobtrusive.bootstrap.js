@@ -1,5 +1,5 @@
 ﻿/*!
- * jQuery Validate Unobtrusive Bootstrap 1.1.0
+ * jQuery Validate Unobtrusive Bootstrap 1.2.0
  *
  * https://github.com/sandrocaseiro/jquery.validate.unobtrusive.bootstrap
  *
@@ -10,15 +10,13 @@
 
 (function($)
 {
-	var errorPlacementBase, successBase;
-
 	function escapeAttributeValue(value)
 	{
 		// As mentioned on http://api.jquery.com/category/selectors/
 		return value.replace(/([!"#$%&'()*+,./:;<=>?@\[\\\]^`{|}~])/g, "\\$1");
 	}
 
-	function onError(formElement, error, inputElement)
+	function onError(formElement, errorPlacementBase, error, inputElement)
 	{
 		var container = $(formElement).find("[data-valmsg-for='" + escapeAttributeValue(inputElement[0].name) + "']"),
 			replaceAttrValue = container.attr("data-valmsg-replace"),
@@ -41,7 +39,7 @@
 		}
 	}
 
-	function onSuccess(error)
+	function onSuccess(successBase, error)
 	{
 		var container = error.data("unobtrusiveContainer");
 
@@ -76,15 +74,18 @@
 			
 			var validator = $this.data('validator');
 			validator.settings.errorClass += ' text-danger';
-			errorPlacementBase = validator.settings.errorPlacement;
-			successBase = validator.settings.success;
+			var errorPlacementBase = validator.settings.errorPlacement;
+			var successBase = validator.settings.success;
 
 			validator.settings.errorPlacement = function(error, inputElement)
 			{
-				onError($this, error, inputElement);
+				onError($this, errorPlacementBase, error, inputElement);
 			};
 
-			validator.settings.success = onSuccess;
+			validator.settings.success = function(error)
+			{
+				onSuccess(successBase, error);
+			}
 
 			$this.find('.input-validation-error').each(function()
 			{
@@ -93,7 +94,7 @@
 					.addClass('text-danger')
 					.attr('for', escapeAttributeValue($(this)[0].name))
 					.text(errorElement.text());
-				onError($this, newElement, $(this));
+				onError($this, errorPlacementBase, newElement, $(this));
 			});
 		});
 	};
