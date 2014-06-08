@@ -3,7 +3,9 @@ jquery.validate.unobtrusive.bootstrap
 
 A jQuery Validate Unobtrusive extension for Bootstrap 3
 
-[If you liked it, buy me a beer!](https://www.gittip.com/sandrocaseiro/)
+If you liked it, buy me a beer!
+
+https://pledgie.com/campaigns/25585
 
 ## Where can I get it?
 
