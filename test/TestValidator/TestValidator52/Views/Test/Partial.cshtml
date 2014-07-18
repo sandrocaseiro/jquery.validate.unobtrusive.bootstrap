@@ -1,0 +1,35 @@
+﻿@model TestValidator52.Models.User
+@{
+	ViewBag.Title = "Partial";
+}
+
+@if (ViewBag.Valid != null)
+{
+	if ((bool)ViewBag.Valid)
+	{
+		<div class="alert alert-success">Valid</div>
+	}
+	else
+	{
+		<div class="alert alert-danger">Invalid</div>
+	}
+}
+<h2>User</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.ValidationSummary()
+	<div class="form-group">
+		@Html.LabelFor(m => m.Name, new { @class = "control-label" })
+		@Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Name)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Email, new { @class = "control-label" })
+		@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Email)
+	</div>
+	<button type="submit" class="btn btn-default">Enviar</button>
+}
+
+@Html.Action("ProductPartial", "Test")

@@ -1,0 +1,19 @@
+﻿@model TestValidator52.Models.Product
+
+<h2>Produto</h2>
+
+@using (Html.BeginForm("ProdutoPartial", "Test"))
+{
+	@Html.ValidationSummary()
+	<div class="form-group">
+		@Html.LabelFor(m => m.Name, new { @class = "control-label" })
+		@Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Name)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Category, new { @class = "control-label" })
+		@Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Category)
+	</div>
+	<button type="submit" class="btn btn-default">Send</button>
+}
