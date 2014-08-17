@@ -1,5 +1,5 @@
 ﻿/*!
- * jQuery Validate Unobtrusive Bootstrap 1.2.2
+ * jQuery Validate Unobtrusive Bootstrap 1.2.3
  *
  * https://github.com/sandrocaseiro/jquery.validate.unobtrusive.bootstrap
  *
@@ -36,13 +36,9 @@
 
 	function onError(formElement, errorPlacementBase, error, inputElement)
 	{
-		var container = $(formElement).find("[data-valmsg-for='" + escapeAttributeValue(inputElement[0].name) + "']"),
-			replaceAttrValue = container.attr("data-valmsg-replace"),
-			replace = replaceAttrValue ? $.parseJSON(replaceAttrValue) !== false : null;
-
 		errorPlacementBase(error, inputElement);
 
-		if (replace)
+		if ($(inputElement).hasClass('input-validation-error'))
 		{
 			addErrorClass(inputElement)
 		}

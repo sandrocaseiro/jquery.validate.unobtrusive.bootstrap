@@ -175,13 +175,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.11.1.min.map" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map">
-      <DependentUpon>jquery.validate.unobtrusive.bootstrap.min.js</DependentUpon>
-    </Content>
     <Content Include="Views\Test\User.cshtml" />
     <Content Include="Views\Test\Multiple.cshtml" />
     <Content Include="Views\Test\Partial.cshtml" />
     <Content Include="Views\Test\ProductPartial.cshtml" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map">
+      <DependentUpon>jquery.validate.unobtrusive.bootstrap.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
