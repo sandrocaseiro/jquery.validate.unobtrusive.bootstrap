@@ -14,6 +14,10 @@ You can get it on [Nuget](http://nuget.org) from the package manager console:
 PM> Install-Package jquery.validate.unobtrusive.bootstrap
 ```
 
+or on Bower:
+```
+$ bower install jquery.validate.unobtrusive.bootstrap
+```
 ## How to use?
 
 Just include the javascript after jquery.validate.unobtrusive and that's it!
