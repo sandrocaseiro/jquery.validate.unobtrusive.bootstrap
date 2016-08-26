@@ -21,7 +21,14 @@
 		var group = element.closest('.form-group');
 		if (group && group.length > 0)
 		{
-			group.addClass('has-error').removeClass('has-success');
+			if (group.hasClass("row"))
+			{
+				element.closest("div[class^='col-']").addClass('has-error')).removeClass('has-success');
+			} 
+			else
+			{
+				group.addClass('has-error').removeClass('has-success');
+			}
 		}
 	}
 
@@ -30,7 +37,14 @@
 		var group = element.closest('.form-group');
 		if (group && group.length > 0)
 		{
-			group.addClass('has-success').removeClass('has-error');
+			if (group.hasClass("row"))
+			{
+				element.closest("div[class^='col-']").addClass('has-success')).removeClass('has-error');
+			} 
+			else
+			{
+				group.addClass('has-success').removeClass('has-error');
+			}
 		}
 	}
 
